@@ -13,11 +13,13 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
     private int extraJumps;
     public int extraJumpValue;
+    private Animator myAnimator;
     // Start is called before the first frame update
     void Start()
     {
         extraJumps = extraJumpValue;
         rb = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -51,6 +53,8 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        myAnimator.SetFloat("IsRunning", Mathf.Abs(moveInput));
+        
         if (facingRight == false && moveInput > 0)
         {
             Flip();
@@ -59,6 +63,7 @@ public class PlayerController : MonoBehaviour
         {
             Flip();
         }
+
     }
     //Flip character
     private void Flip()
