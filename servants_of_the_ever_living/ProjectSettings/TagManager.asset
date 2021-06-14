@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - GameMaster
+  - Trigger
+  - Boss
   layers:
   - Default
   - TransparentFX

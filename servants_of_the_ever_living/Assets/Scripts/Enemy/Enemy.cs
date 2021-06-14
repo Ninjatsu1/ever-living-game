@@ -5,11 +5,13 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 20;
     public int currentHealth;
     public Healthbar healthbar;
-
+    private GameMaster gm;
+    public GameObject bossHealthbar;
     void Start()
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
+        gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
     }
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class Enemy : MonoBehaviour
             EnemyDeath();
         }
     }
-
+  
     //Enemy death
     public void EnemyDeath()
     {
