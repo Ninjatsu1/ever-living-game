@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
-
+using TMPro;
 public class GameMaster : MonoBehaviour
 {
-    private static GameMaster instance;
+    public static GameMaster instance;
     public Vector2 respawnPointPosition;
-
+    public GameObject player;
+    public TextMeshProUGUI bossNameText;
+    public GameObject bossHealthbar;
+    public TextMeshProUGUI bossHealth;
     private void Awake()
     {
         if (instance == null)
@@ -15,5 +18,6 @@ public class GameMaster : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
 }
