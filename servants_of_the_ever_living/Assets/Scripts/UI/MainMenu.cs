@@ -4,8 +4,6 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     public string mainGameScene;
-    public string creditsScene;
-
     //Load and start new game
     public void NewGame()
     {
@@ -13,12 +11,6 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    //Load credits scene
-    public void Credits()
-    {
-        SceneManager.LoadScene(creditsScene);
-
-    }
     //Quit game
     public void Quit()
     {

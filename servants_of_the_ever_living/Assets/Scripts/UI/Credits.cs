@@ -1,13 +1,18 @@
-﻿using UnityEngine.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Credits : MonoBehaviour
 {
-    public string mainMenuName;
-
-    //Back to main menu
-    public void BackToMainMenu()
+    public GameObject CreditsUI;
+    //Display Credits
+    public void DisplayCredits()
     {
-        SceneManager.LoadScene(mainMenuName);
+        CreditsUI.SetActive(true);
     }
+
+    //Hide credits
+    public void HideCredits()
+    {
+        CreditsUI.SetActive(false);
+    }
+   
 }
