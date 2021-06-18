@@ -445,7 +445,7 @@ MonoBehaviour:
   minDamage: 1
   maxDamage: 10
   attackOffset: {x: 0, y: 0, z: 0}
-  attackRange: 0.5
+  attackRange: 1.55
   attackMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -500,7 +500,7 @@ PrefabInstance:
     - target: {fileID: -7473196898774919955, guid: 5a6de1a2e0f7240439d750f465f0bf33,
         type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: -6423584317343668373, guid: 5a6de1a2e0f7240439d750f465f0bf33,
         type: 3}

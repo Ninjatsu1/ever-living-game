@@ -37,10 +37,6 @@ public class Boss : MonoBehaviour
         }
     }
 
-    private void SetName()
-    {
-
-    }
     // Start is called before the first frame update
     public void LookAtPlayer()
     {
