@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public Healthbar healthbar;
     private GameMaster gm;
     public GameObject bossHealthbar;
+    public GameObject floatingText;
     void Start()
     {
         currentHealth = maxHealth;
@@ -32,7 +33,7 @@ public class Enemy : MonoBehaviour
             EnemyDeath();
         }
     }
-  
+    
     //Enemy death
     public void EnemyDeath()
     {
