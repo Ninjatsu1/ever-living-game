@@ -53,7 +53,6 @@ public class EnemyAttack : MonoBehaviour
 
                 if (playerToDamage != null)
                 {
-
                     playerToDamage.GetComponent<PlayerStats>().TakeDamage(damage);
                 }
             }
