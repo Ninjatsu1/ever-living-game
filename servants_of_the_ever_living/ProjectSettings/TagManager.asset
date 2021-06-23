@@ -8,6 +8,9 @@ TagManager:
   - GameMaster
   - Trigger
   - Boss
+  - bossHealth
+  - bossHealthbar
+  - bossName
   layers:
   - Default
   - TransparentFX

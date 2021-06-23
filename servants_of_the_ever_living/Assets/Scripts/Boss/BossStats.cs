@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TMPro;
 public class BossStats : MonoBehaviour
 {
     public string bossName;
@@ -17,7 +18,7 @@ public class BossStats : MonoBehaviour
 
     private void SetName()
     {
-        gm.bossNameText.text = bossName;
+        gm.bossNameText.GetComponent<TextMeshProUGUI>().text = bossName;
         gm.bossNameText.gameObject.SetActive(true);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using TMPro;
 public class Boss : MonoBehaviour
 {
     public int maxHealth = 20;
@@ -18,8 +18,8 @@ public class Boss : MonoBehaviour
         healthbar = gm.bossHealthbar.GetComponent<Healthbar>();
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
-        gm.bossHealth.text = currentHealth.ToString();
-        gm.bossNameText.text = bossName;
+        gm.bossHealth.GetComponent<TextMeshProUGUI>().text = currentHealth.ToString();
+        gm.bossNameText.GetComponent<TextMeshProUGUI>().text = bossName;
         bossHealthbar = GameObject.FindGameObjectWithTag("Boss");
         
     }
@@ -29,7 +29,7 @@ public class Boss : MonoBehaviour
     {
         currentHealth -= damageAmount;
         healthbar.SetHealth(currentHealth);
-        gm.bossHealth.text = currentHealth.ToString();
+        gm.bossHealth.GetComponent<TextMeshProUGUI>().text = currentHealth.ToString();
 
         if (currentHealth <= 0)
         {
