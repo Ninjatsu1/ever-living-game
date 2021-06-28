@@ -7,20 +7,17 @@ public class Boss : MonoBehaviour
     public Healthbar healthbar;
     public bool isBoss = false;
     public string bossName;
-    private GameMaster gm;
     public GameObject bossHealthbar;
     public Transform player;
     public bool isFlipped;
     private void Start()
     {
-        gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
-        player = gm.player.transform;
-        healthbar = gm.bossHealthbar.GetComponent<Healthbar>();
+        player = GameMaster.instance.player.transform;
+        healthbar = GameMaster.instance.bossHealthbar.GetComponent<Healthbar>();
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
-        gm.bossHealth.GetComponent<TextMeshProUGUI>().text = currentHealth.ToString();
-        gm.bossNameText.GetComponent<TextMeshProUGUI>().text = bossName;
-        bossHealthbar = GameObject.FindGameObjectWithTag("Boss");
+        GameMaster.instance.bossHealth.GetComponent<TextMeshProUGUI>().text = currentHealth.ToString();
+        GameMaster.instance.bossNameText.GetComponent<TextMeshProUGUI>().text = bossName;
         
     }
 
@@ -29,7 +26,7 @@ public class Boss : MonoBehaviour
     {
         currentHealth -= damageAmount;
         healthbar.SetHealth(currentHealth);
-        gm.bossHealth.GetComponent<TextMeshProUGUI>().text = currentHealth.ToString();
+        GameMaster.instance.bossHealth.GetComponent<TextMeshProUGUI>().text = currentHealth.ToString();
 
         if (currentHealth <= 0)
         {
@@ -60,12 +57,12 @@ public class Boss : MonoBehaviour
     //Enemy death
     public void EnemyDeath()
     {
-        if (isBoss)
-        {
-            bossHealthbar = gm.bossHealthbar.gameObject;
-            bossHealthbar.gameObject.SetActive(false);
-        }
-        DestroyImmediate(gameObject);
+     
+        GameObject healthbar = GameMaster.instance.bossHealthbar.gameObject;
+        Destroy(healthbar, 1f);
+        Destroy(gameObject, 1f);
+
+        
 
     }
 }

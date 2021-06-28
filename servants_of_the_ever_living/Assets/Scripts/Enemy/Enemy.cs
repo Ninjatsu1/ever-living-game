@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
-        gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
+        gm = GameMaster.instance;
     }
 
     // Update is called once per frame

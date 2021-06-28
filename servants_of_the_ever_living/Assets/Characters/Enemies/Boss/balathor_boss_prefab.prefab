@@ -465,7 +465,7 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   healthbar: {fileID: 0}
-  isBoss: 0
+  isBoss: 1
   bossName: Balathor, The Obedient
   bossHealthbar: {fileID: 0}
   player: {fileID: 6316635779366128156}
