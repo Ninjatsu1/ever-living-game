@@ -40,22 +40,22 @@ public class GameMaster : MonoBehaviour
     //Get objects
     public void GetObjects()
     {
-        if (player.gameObject == null)
+        if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        if (bossNameText.gameObject == null)
+        if (bossNameText == null)
         {
 
             bossNameText = GameObject.FindGameObjectWithTag("bossName");
             Debug.Log("Got it");
 
         }
-        if (bossHealth.gameObject == null)
+        if (bossHealth == null)
         {
             bossHealth = GameObject.FindGameObjectWithTag("bossHealth");
         }
-        if (bossHealthbar.gameObject == null)
+        if (bossHealthbar == null)
         {
             bossHealthbar = GameObject.FindGameObjectWithTag("bossHealthbar");
         }

@@ -24,7 +24,7 @@ public class Patrolling : MonoBehaviour
         transform.Translate(Vector2.right * patrollingSpeed * Time.deltaTime);
         if (IsHittingWall() || IsNearEdge())
         {
-            if (facingRight == true)
+            if (facingRight)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
                 facingRight = false;
@@ -61,7 +61,7 @@ public class Patrolling : MonoBehaviour
     {
         bool isHitting = false;
         float castDistace = baseCastDistance;
-        if (facingRight == false)
+        if (!facingRight)
         {
             castDistace = -castDistace;
         }
