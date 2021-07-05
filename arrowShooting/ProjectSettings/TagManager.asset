@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemy
-  - GameMaster
-  - Trigger
-  - Boss
-  - Trap
-  - Ground
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -19,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - Enemy
-  - Action
+  - 
+  - 
+  - 
   - 
   - 
   - 
