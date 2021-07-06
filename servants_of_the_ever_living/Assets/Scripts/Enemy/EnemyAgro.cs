@@ -35,10 +35,17 @@ public class EnemyAgro : MonoBehaviour
     public bool isFacingLeft = true;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        player = GameMaster.instance.player.transform;
+
+    }
     void Start()
     {
+
         isFacingLeft = true;
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
