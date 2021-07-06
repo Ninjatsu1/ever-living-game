@@ -14,6 +14,10 @@ public class EnemyAttack : MonoBehaviour
     public float startTimeBetweenAttack;
     public Transform attackPosition;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        player = GameMaster.instance.player.transform;
+    }
     void Start()
     {
         myAnimation = GetComponent<Animator>();

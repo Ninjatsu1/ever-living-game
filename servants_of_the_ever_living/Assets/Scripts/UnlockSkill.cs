@@ -3,13 +3,10 @@
 public class UnlockSkill : MonoBehaviour
 {
     public GameObject ButtonCanvas;
+    public GameObject UIDoubleJumpMessage;
     private bool Player;
     private bool IsAbleToUnlockSkill = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool DisplayDoubleJumpMessage = false;
 
     // Update is called once per frame
     void Update()
@@ -19,10 +16,23 @@ public class UnlockSkill : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 GameMaster.instance.player.GetComponent<PlayerController>().isDoubleJumpUnlocked = true;
+                DoubleJumpMessage(true);
             }
         }
     }
 
+    private void DoubleJumpMessage(bool DisplayDoubleJumpMessage)
+    {
+       
+        if (DisplayDoubleJumpMessage)
+        {
+            UIDoubleJumpMessage.SetActive(true);
+        } else
+        {
+            UIDoubleJumpMessage.SetActive(false);
+        }
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -39,6 +49,7 @@ public class UnlockSkill : MonoBehaviour
         {
             ButtonCanvas.SetActive(false);
             IsAbleToUnlockSkill = false;
+
         }
     }
 
