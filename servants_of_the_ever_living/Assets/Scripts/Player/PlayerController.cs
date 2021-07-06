@@ -4,16 +4,19 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
-    private float moveInput;
-    private Rigidbody2D rb;
-    private bool facingRight = true;
     public bool isGrounded;
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
-    private int extraJumps;
+    public bool isDoubleJumpUnlocked = false;
     public int extraJumpValue;
+
+    private float moveInput;
+    private Rigidbody2D rb;
+    private int extraJumps;
     private Animator myAnimator;
+    private bool facingRight = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,14 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        if (isDoubleJumpUnlocked)
+        {
+            extraJumpValue = 1;
+        }
+        else
+        {
+            extraJumpValue = 0;
+        }
         Jump();
     }
 
