@@ -221,11 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f806c2b4a973640b2f45ea0f219ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 50
   currentHealth: 0
   healthbar: {fileID: 7713905276906748654}
-  bossHealthbar: {fileID: 0}
-  floatingText: {fileID: 0}
 --- !u!50 &8095727763836667915
 Rigidbody2D:
   serializedVersion: 4
@@ -340,8 +338,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8095727763955357781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.22, y: 0.33, z: 0}
-  m_LocalScale: {x: 1.3438073, y: 2.007148, z: 1}
+  m_LocalPosition: {x: -0.478, y: 0.361, z: 0}
+  m_LocalScale: {x: 1.657917, y: 2.243212, z: 1}
   m_Children:
   - {fileID: 8095727765523518156}
   m_Father: {fileID: 8095727763836667910}

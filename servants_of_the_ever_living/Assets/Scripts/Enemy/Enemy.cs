@@ -5,14 +5,10 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 20;
     public int currentHealth;
     public Healthbar healthbar;
-    private GameMaster gm;
-    public GameObject bossHealthbar;
-    public GameObject floatingText;
     void Start()
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
-        gm = GameMaster.instance;
     }
 
     // Update is called once per frame

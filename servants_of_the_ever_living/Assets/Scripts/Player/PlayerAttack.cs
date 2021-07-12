@@ -16,6 +16,10 @@ public class PlayerAttack : MonoBehaviour
     }
     private void Update()
     {
+        Attack();
+    }
+    public void Attack()
+    {
         if (timeBetweenAttack <= 0)
         {
             if (Input.GetMouseButton(0))
@@ -24,23 +28,25 @@ public class PlayerAttack : MonoBehaviour
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosition.position, meleeRange, whatIsEnemy);
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                    if(enemiesToDamage[i].gameObject.tag == "Boss")
+                    if (enemiesToDamage[i].gameObject.tag == "Boss")
                     {
                         enemiesToDamage[i].GetComponent<Boss>().TakeDamage(damage);
-                    }else
+                    }
+                    else
                     {
                         enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
                     }
-                    
+
                 }
             }
             timeBetweenAttack = startTimeBetweenAttack;
 
-        } else
+        }
+        else
         {
             timeBetweenAttack -= Time.deltaTime;
         }
-        
+
     }
     private void OnDrawGizmosSelected()
     {

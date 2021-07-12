@@ -9,10 +9,11 @@ public class ArrowEnemy : MonoBehaviour
     public float launchForce;
     public Transform PointyEnd;
     public bool IsPlayerDetected = false;
-
+    public LayerMask whatIsPlayer;
+    public float sightRange = 10;
     float fireRate;
     float nextFire;
-
+    public Transform SightDetection;
 
     // Use this for initialization
     void Start()
@@ -24,7 +25,7 @@ public class ArrowEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        DetectPlayer();
         if (IsPlayerDetected)
         {
             CheckIfTimeToFire();
@@ -42,22 +43,29 @@ public class ArrowEnemy : MonoBehaviour
 
     }
 
-
-
-    private void OnTriggerStay2D(Collider2D other)
+    //Detect player with circle
+    private void DetectPlayer()
     {
-        if (other.CompareTag("Player"))
+        Collider2D playerToDamage = Physics2D.OverlapCircle(SightDetection.position, sightRange, whatIsPlayer);
+        if (playerToDamage != null)
         {
-            IsPlayerDetected = true;
+            if (playerToDamage.gameObject.CompareTag("Player"))
+            {
+                IsPlayerDetected = true;
+                Debug.Log("Player here");
+            }
+         
         }
-
+        else
+        {
+            IsPlayerDetected = false;
+        }
     }
-    private void OnTriggerExit2D(Collider2D other)
+
+    private void OnDrawGizmosSelected()
     {
-        IsPlayerDetected = false;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(SightDetection.position, sightRange);
     }
-
-
-
 
 }

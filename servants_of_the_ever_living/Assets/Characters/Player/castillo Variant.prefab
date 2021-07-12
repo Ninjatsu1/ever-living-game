@@ -2029,6 +2029,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  isDoubleJumpUnlocked: 0
   extraJumpValue: 1
 --- !u!114 &1126117304417644259
 MonoBehaviour:
@@ -2046,6 +2047,9 @@ MonoBehaviour:
   currentHealth: 0
   healthbar: {fileID: 0}
   healthText: {fileID: 0}
+  floatingText: {fileID: 7661198745552475460, guid: edf386ae9b94ade4bb9e57d2f67721d4,
+    type: 3}
+  DamagePopUpCanvas: {fileID: 0}
 --- !u!114 &3763155114806776119
 MonoBehaviour:
   m_ObjectHideFlags: 0
