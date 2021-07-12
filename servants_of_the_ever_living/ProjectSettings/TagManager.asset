@@ -11,6 +11,8 @@ TagManager:
   - bossHealth
   - bossHealthbar
   - bossName
+  - Trap
+  - Ground
   layers:
   - Default
   - TransparentFX

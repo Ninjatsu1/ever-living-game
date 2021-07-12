@@ -34,15 +34,10 @@ public class EnemyAgro : MonoBehaviour
     private Rigidbody2D rb;
     public bool isFacingLeft = true;
 
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        player = GameMaster.instance.player.transform;
 
-    }
     void Start()
     {
-
+        player = GameMaster.instance.player.transform;
         isFacingLeft = true;
         rb = GetComponent<Rigidbody2D>();
 

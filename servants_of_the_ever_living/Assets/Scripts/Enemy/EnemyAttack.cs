@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -13,19 +14,24 @@ public class EnemyAttack : MonoBehaviour
     private float timeBetweenAttack;
     public float startTimeBetweenAttack;
     public Transform attackPosition;
+
     // Start is called before the first frame update
     private void Awake()
     {
-        player = GameMaster.instance.player.transform;
+
+
     }
     void Start()
     {
+        player = GameMaster.instance.player.gameObject.transform;
         myAnimation = GetComponent<Animator>();
     }
+  
 
     // Update is called once per frame
     void Update()
     {
+        
         //Collider2D[] playerToDamage = Physics2D.OverlapCircleAll(attackPosition.position, meleeRange, whatIsPlayer);
         if (timeBetweenAttack <= 0)
         {

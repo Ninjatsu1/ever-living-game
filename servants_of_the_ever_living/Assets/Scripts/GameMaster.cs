@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class GameMaster : MonoBehaviour
 {
@@ -16,26 +14,14 @@ public class GameMaster : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
         } else
         {
             Destroy(gameObject);
         }
         
     }
-    // called first
-    void OnEnable()
-    {
-        Debug.Log("OnEnable called");
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-    // called second
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        
-        Debug.Log("OnSceneLoaded: " + scene.name);
-        Debug.Log(mode);
-    }
+    
+
 
     //Get objects
     public void GetObjects()
